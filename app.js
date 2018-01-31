@@ -9,9 +9,9 @@ var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-var entries = [];
+//var entries = [];
 
-app.locals.entries = entries;
+//app.locals.entries = entries;
 
 app.use(logger("dev"));
 
@@ -30,12 +30,12 @@ app.post("/new-entry", function (request, response){
         response.status(400).send("Entries must have some text");
         return;
     }
-    entries.push({
+    /*entries.push({
         title:request.body.title, 
         body:request.body.body,
         published:new Date()
-    });
-    response.redirect("/");
+    });*/
+    //response.redirect("/");
 });
 
 app.use(function (request, response){
